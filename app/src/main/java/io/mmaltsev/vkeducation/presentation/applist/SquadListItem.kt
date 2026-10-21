@@ -26,9 +26,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import io.mmaltsev.vkeducation.R
-
+import io.mmaltsev.vkeducation.presentation.theme.VkEducationTheme
 
 
 @DrawableRes
@@ -106,3 +107,4 @@ fun SquadListItem(squad: SquadInfo, onClick: () -> Unit, modifier: Modifier = Mo
 
     }
 }
+
