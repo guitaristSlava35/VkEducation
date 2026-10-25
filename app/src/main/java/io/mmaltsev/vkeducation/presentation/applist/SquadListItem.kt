@@ -32,22 +32,9 @@ import io.mmaltsev.vkeducation.R
 import io.mmaltsev.vkeducation.presentation.theme.VkEducationTheme
 
 
-@DrawableRes
-fun directionLogo(direction: String): Int {
-    return when(direction){
-        "ССО" -> R.drawable.ic_logo_sso
-        "СПО" -> R.drawable.ic_logo_spo
-        "ССхО" -> R.drawable.ic_logo_ssho
-        "ССервО" -> R.drawable.ic_logo_sservo
-        "САО" -> R.drawable.ic_logo_sao
-        "СОП" -> R.drawable.ic_logo_sop
-        else -> R.drawable.ic_logo_sso
-    }
-}
+
 @Composable
 fun SquadListItem(squad: SquadInfo, onClick: () -> Unit, modifier: Modifier = Modifier) {
-
-
 
     val cardColor = when (squad.direction_work){
         "СОП" -> Color(0xFF2F5C8A)

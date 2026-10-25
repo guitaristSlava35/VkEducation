@@ -23,5 +23,6 @@
     <string name="app_details_similar_apps">Вам может понравиться</string>
     <string name="app_details_download">Скачать</string>
     <string name="app_details_showcase">Витрина</string>
+    <string name="squad_list_toolbar_message">Вы нажали на тулбар</string>
 
 </resources>

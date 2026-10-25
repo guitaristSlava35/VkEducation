@@ -23,3 +23,16 @@ val squads = listOf(
     SquadInfo(R.drawable.ic_orion, "Орион", "ССО", "Строительные отряды работают на строках")
 )
 
+@DrawableRes
+fun directionLogo(direction: String): Int {
+    return when(direction){
+        "ССО" -> R.drawable.ic_logo_sso
+        "СПО" -> R.drawable.ic_logo_spo
+        "ССхО" -> R.drawable.ic_logo_ssho
+        "ССервО" -> R.drawable.ic_logo_sservo
+        "САО" -> R.drawable.ic_logo_sao
+        "СОП" -> R.drawable.ic_logo_sop
+        else -> R.drawable.ic_logo_sso
+    }
+}
+
