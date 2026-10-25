@@ -29,6 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import io.mmaltsev.vkeducation.R
+import io.mmaltsev.vkeducation.domain.applist.SquadInfo
 import io.mmaltsev.vkeducation.presentation.theme.VkEducationTheme
 import kotlinx.coroutines.flow.Flow
 
@@ -54,7 +55,7 @@ fun SquadListScreen(
     )
 }
 
-// «Глупый» экран: только рисует переданное состояние (удобно для Preview)
+// Экран без ViewModel: только рисует переданное состояние (удобно для Preview)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SquadListContent(
@@ -70,7 +71,7 @@ fun SquadListContent(
                 title = { Text("Отряды СПб") },
                 navigationIcon = {
                     Icon(
-                        painter = painterResource(R.drawable.ic_launcher_foreground),
+                        painter = painterResource(R.drawable.ic_logo_spbso),
                         contentDescription = null,
                         modifier = Modifier
                             .padding(start = 12.dp)
@@ -82,7 +83,6 @@ fun SquadListContent(
                     containerColor = MaterialTheme.colorScheme.primary,
                     titleContentColor = MaterialTheme.colorScheme.onPrimary,
                 ),
-                // Тулбар кликабельный: клик уходит во ViewModel
                 modifier = Modifier.clickable(onClick = onToolbarClick),
             )
         },
@@ -115,7 +115,6 @@ fun SquadList(
     }
 }
 
-// Слушает одноразовые события из ViewModel и показывает снекбар
 @Composable
 private fun ObserveEvents(
     events: Flow<SquadListEvent>,
@@ -134,12 +133,18 @@ private fun ObserveEvents(
     }
 }
 
+private val previewSquads = listOf(
+    SquadInfo("1", R.drawable.ic_altair, "Альтаир", "Студенческий отряд направления ССервО", "ССервО"),
+    SquadInfo("2", R.drawable.ic_provorniy, "Проворный", "Студенческий отряд направления СОП", "СОП"),
+    SquadInfo("3", R.drawable.ic_django, "Джанго", "Студенческий отряд направления ССхО", "ССхО"),
+)
+
 @Preview
 @Composable
 private fun Preview() {
     VkEducationTheme {
         SquadListContent(
-            state = SquadListState(squads = squads),
+            state = SquadListState(squads = previewSquads),
             snackbarHostState = remember { SnackbarHostState() },
             onToolbarClick = {},
             onAppClick = {},

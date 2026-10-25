@@ -19,7 +19,7 @@ import io.mmaltsev.vkeducation.domain.appdetails.AppDetails
 import io.mmaltsev.vkeducation.domain.appdetails.SimilarApp
 import io.mmaltsev.vkeducation.domain.appdetails.Category
 import io.mmaltsev.vkeducation.presentation.theme.VkEducationTheme
-import io.mmaltsev.vkeducation.presentation.applist.SquadInfo
+import io.mmaltsev.vkeducation.domain.applist.SquadInfo
 
 @Composable
 fun AppDetailsContent(

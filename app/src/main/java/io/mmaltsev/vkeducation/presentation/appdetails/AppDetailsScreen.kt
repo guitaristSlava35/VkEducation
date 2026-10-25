@@ -18,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import io.mmaltsev.vkeducation.R
-import io.mmaltsev.vkeducation.presentation.applist.SquadInfo
+import io.mmaltsev.vkeducation.domain.applist.SquadInfo
 import kotlinx.coroutines.flow.Flow
 
 @Composable
